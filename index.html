@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cybersecurity Monitoring Dashboard</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+    <script src="/frontend/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Cybersecurity Monitoring Dashboard</h1>
+</header>
+
+<section class="upload-section">
+    <div class="upload-card">
+        <h2>Train Detection Model</h2>
+        <input type="file" id="trainFile">
+        <button onclick="trainModel()">Upload & Train</button>
+        <p id="trainStatus"></p>
+    </div>
+
+    <div class="upload-card">
+        <h2>Scan Network Log</h2>
+        <input type="file" id="scanFile">
+        <button onclick="scanFile()">Upload & Scan</button>
+        <p id="scanStatus"></p>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="card" id="totalAlerts">
+        <h2>Total Alerts</h2>
+        <p>0</p>
+    </div>
+    <div class="card" id="highRisk">
+        <h2>High Risk</h2>
+        <p>0</p>
+    </div>
+    <div class="card" id="mediumRisk">
+        <h2>Medium Risk</h2>
+        <p>0</p>
+    </div>
+    <div class="card" id="safeScans">
+        <h2>Safe Scans</h2>
+        <p>0</p>
+    </div>
+</section>
+
+<section class="alerts-section">
+    <h2>Recent Alerts</h2>
+    <table id="alertTable">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Bytes</th>
+                <th>Attack Type</th>
+                <th>Risk Level</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+<section class="charts">
+    <h2>Threat Analysis</h2>
+    <canvas id="threatChart"></canvas>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
